@@ -37,6 +37,15 @@ class testScreenElement extends ScreenElement {
       color: Color.Red,
     });
   }
+
+  onInitialize() {
+    this.on("pointerenter", () => {
+      this.graphics.color = Color.Green;
+    });
+    this.on("pointerleave", () => {
+      this.graphics.color = Color.Red;
+    });
+  }
 }
 
 game.add(new testScreenElement());
