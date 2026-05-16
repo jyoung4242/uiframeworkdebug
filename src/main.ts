@@ -1,7 +1,5 @@
 // main.ts
-import { UIButton } from "./Lib/Components";
 import "./style.css";
-
 import { Engine, DisplayMode, vec, ScreenElement, Color } from "excalibur";
 
 const game = new Engine({
@@ -10,18 +8,7 @@ const game = new Engine({
   displayMode: DisplayMode.Fixed, // the display mode
   pixelArt: true,
 });
-
 await game.start();
-
-// game.add(
-//   new UIButton({
-//     name: "myButton",
-//     idleText: "Click Me",
-//     pos: vec(100, 100),
-//     width: 100,
-//     height: 50,
-//   }),
-// );
 
 let camera = game.currentScene.camera;
 camera.zoom = 1.25;
