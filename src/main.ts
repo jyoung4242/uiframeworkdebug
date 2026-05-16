@@ -2,7 +2,7 @@
 import { UIButton } from "./Lib/Components";
 import "./style.css";
 
-import { Engine, DisplayMode, vec } from "excalibur";
+import { Engine, DisplayMode, vec, ScreenElement, Color } from "excalibur";
 
 const game = new Engine({
   width: 800, // the width of the canvas
@@ -24,4 +24,19 @@ game.add(
 );
 
 let camera = game.currentScene.camera;
-camera.zoom = 1.5;
+camera.zoom = 1.25;
+camera.pos = vec(400, 300);
+
+class testScreenElement extends ScreenElement {
+  constructor() {
+    super({
+      name: "testScreenElement",
+      pos: vec(400, 200),
+      width: 100,
+      height: 100,
+      color: Color.Red,
+    });
+  }
+}
+
+game.add(new testScreenElement());
